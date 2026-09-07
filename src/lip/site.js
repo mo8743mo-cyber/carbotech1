@@ -6,6 +6,7 @@ export const NAV_LINKS = [
   { label: "Technology", path: "/technology" },
   { label: "Portfolio", path: "/portfolio" },
   { label: "About", path: "/about" },
+  { label: "Sales Guide", path: "/sales-guide" },
   { label: "Request a Quote", path: "/quote" },
   { label: "Contact", path: "/contact" },
 ];

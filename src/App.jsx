@@ -17,6 +17,7 @@ import CustomParts from '@/pages/CustomParts';
 import Technology from '@/pages/Technology';
 import Portfolio from '@/pages/Portfolio';
 import About from '@/pages/About';
+import SalesGuide from '@/pages/SalesGuide';
 import Quote from '@/pages/Quote';
 import Contact from '@/pages/Contact';
 import Privacy from '@/pages/Privacy';
@@ -68,6 +69,7 @@ const AuthenticatedApp = () => {
         <Route path="/technology" element={<Technology />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/about" element={<About />} />
+        <Route path="/sales-guide" element={<SalesGuide />} />
         <Route path="/quote" element={<Quote />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />

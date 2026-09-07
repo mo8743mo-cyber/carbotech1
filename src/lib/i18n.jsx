@@ -6,7 +6,7 @@ const translations = {
   en: {
     nav: {
       home: "Home", spoilers: "Pre-Made Spoilers", mirrors: "Mirror Caps", custom: "Custom Parts",
-      technology: "Technology", portfolio: "Portfolio", about: "About", quote: "Request a Quote", contact: "Contact",
+      technology: "Technology", portfolio: "Portfolio", about: "About", sales: "Sales Guide", quote: "Request a Quote", contact: "Contact",
     },
     footer: {
       description: "Precision carbon-fiber manufacturing for automotive, motorcycle, drone, industrial, and fully custom applications.",
@@ -17,7 +17,7 @@ const translations = {
   ar: {
     nav: {
       home: "الرئيسية", spoilers: "أجنحة جاهزة", mirrors: "أغطية المرايا", custom: "قطع مخصصة",
-      technology: "التقنية", portfolio: "أعمالنا", about: "من نحن", quote: "طلب عرض سعر", contact: "اتصل بنا",
+      technology: "التقنية", portfolio: "أعمالنا", about: "من نحن", sales: "دليل المبيعات", quote: "طلب عرض سعر", contact: "اتصل بنا",
     },
     footer: {
       description: "تصنيع دقيق لأجزاء ألياف الكربون للسيارات والدراجات والطائرات المسيرة والتطبيقات الصناعية والمخصصة بالكامل.",
