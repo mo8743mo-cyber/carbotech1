@@ -4,6 +4,7 @@ import { Filter, X, ArrowRight, Package, Search } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Image } from "@/components/ui/image";
 import { IMAGES } from "@/lib/site";
+import { formatSAR, useLanguage } from "@/lib/i18n";
 
 const SPOILER_TYPES = ["rear-wing", "lip-spoiler", "ducktail", "gt-wing", "splitter", "diffuser", "side-skirt", "other"];
 const AVAILABILITY = ["in-stock", "low-stock", "made-to-order", "out-of-stock"];
@@ -16,6 +17,7 @@ const AVAIL_STYLE = {
 };
 
 export default function Spoilers() {
+  const { language } = useLanguage();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({ make: "", type: "", availability: "", q: "" });
@@ -131,7 +133,7 @@ export default function Spoilers() {
                       <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-1">{p.description}</p>
                       <div className="mt-4 flex items-center justify-between pt-4 border-t border-border">
                         <span className="font-heading font-bold text-primary">
-                          {p.price_on_request || !p.price ? "Request Price" : `$${p.price.toLocaleString()}`}
+                          {p.price_on_request || !p.price ? "Request Price" : formatSAR(p.price, language)}
                         </span>
                         <span className="font-mono text-xs text-muted-foreground">{p.spoiler_type?.replace("-", " ")}</span>
                       </div>

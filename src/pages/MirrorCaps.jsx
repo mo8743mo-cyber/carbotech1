@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, X } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { Image } from "@/components/ui/image";
+import { formatSAR, useLanguage } from "@/lib/i18n";
 
 const PRODUCTS = [
   {
@@ -97,6 +98,7 @@ const AVAIL_STYLE = {
 const BRANDS = ["All", "BMW", "Mercedes-Benz"];
 
 export default function MirrorCaps() {
+  const { language } = useLanguage();
   const [brand, setBrand] = useState("All");
   const [selected, setSelected] = useState(null);
 
@@ -153,7 +155,7 @@ export default function MirrorCaps() {
                     <h3 className="font-heading font-semibold text-lg mt-1">{p.name}</h3>
                     <p className="text-sm text-muted-foreground mt-2 line-clamp-2 flex-1">{p.description}</p>
                     <div className="mt-4 flex items-center justify-between pt-4 border-t border-border">
-                      <span className="font-heading font-bold text-primary">{`${p.price.toLocaleString()} SAR`}</span>
+                      <span className="font-heading font-bold text-primary">{formatSAR(p.price, language)}</span>
                       <button onClick={() => setSelected(p)} className="h-10 px-4 border border-border text-xs font-mono uppercase hover:border-primary transition-colors min-h-[44px]">View Details</button>
                     </div>
                   </div>
@@ -179,7 +181,7 @@ export default function MirrorCaps() {
                 <h2 className="font-heading font-bold text-3xl lg:text-4xl mt-2">{selected.name}</h2>
                 <div className="mt-3 font-mono text-sm text-muted-foreground">{selected.brand} {selected.series}</div>
                 <p className="mt-5 text-foreground/70 leading-relaxed">{selected.description}</p>
-                <div className="mt-6 font-heading font-bold text-2xl text-primary">{`${selected.price.toLocaleString()} SAR`}</div>
+                <div className="mt-6 font-heading font-bold text-2xl text-primary">{formatSAR(selected.price, language)}</div>
                 <div className="mt-6 border border-border divide-y divide-border">
                   {[["Material", "2x2 Twill Carbon Fiber"], ["Finish", "Glossy UV-stable clear coat"], ["Fitment", `${selected.brand} ${selected.series}`], ["Availability", selected.availability.replace("-", " ")]].map(([k, v]) => (
                     <div key={k} className="flex justify-between px-4 py-3 text-sm">

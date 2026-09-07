@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/site";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
+  const labels = Object.values(t.nav);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -45,7 +48,7 @@ export default function Navbar() {
                     active ? "text-primary" : "text-foreground/70 hover:text-foreground"
                   }`}
                 >
-                  {l.label}
+                  {labels[NAV_LINKS.findIndex((item) => item.path === l.path)]}
                   {active && <span className="absolute left-3.5 right-3.5 -bottom-0.5 h-px bg-primary" />}
                 </Link>
               </li>
@@ -61,6 +64,13 @@ export default function Navbar() {
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
+        <button
+          className="hidden lg:inline-flex h-9 px-3 border border-border text-xs font-mono uppercase hover:border-primary"
+          onClick={() => setLanguage(language === "ar" ? "en" : "ar")}
+          aria-label={`Switch language to ${t.language}`}
+        >
+          {t.language}
+        </button>
       </nav>
 
       {open && (
@@ -72,11 +82,14 @@ export default function Navbar() {
                   to={l.path}
                   className="block py-3 font-mono text-sm uppercase tracking-wider text-foreground/80 hover:text-primary border-b border-border/50"
                 >
-                  {l.label}
+                  {labels[NAV_LINKS.findIndex((item) => item.path === l.path)]}
                 </Link>
               </li>
             ))}
           </ul>
+          <button className="mx-5 mb-4 h-10 px-4 border border-border text-xs font-mono uppercase" onClick={() => setLanguage(language === "ar" ? "en" : "ar")}>
+            {t.language}
+          </button>
         </div>
       )}
     </header>

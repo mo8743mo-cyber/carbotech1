@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock, Instagram, Youtube, Facebook, Linkedin } from "lucide-react";
 import { NAV_LINKS, COMPANY } from "@/lib/site";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="relative bg-background border-t border-border carbon-weave">
       <div className="mx-auto max-w-[1400px] px-5 lg:px-8 py-16">
@@ -18,7 +20,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Precision carbon-fiber manufacturing for automotive, motorcycle, drone, industrial, and fully custom applications.
+              {t.footer.description}
             </p>
             <div className="flex gap-3 mt-6">
               {[Instagram, Youtube, Facebook, Linkedin].map((Icon, i) => (
@@ -35,12 +37,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ Navigate ]</h3>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ {t.footer.navigate} ]</h3>
             <ul className="space-y-2.5">
               {NAV_LINKS.map((l) => (
                 <li key={l.path}>
                   <Link to={l.path} className="text-sm text-foreground/70 hover:text-primary transition-colors">
-                    {l.label}
+                    {Object.values(t.nav)[NAV_LINKS.findIndex((item) => item.path === l.path)]}
                   </Link>
                 </li>
               ))}
@@ -48,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ Contact ]</h3>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ {t.footer.contact} ]</h3>
             <ul className="space-y-3.5 text-sm text-foreground/70">
               <li className="flex gap-3"><MapPin size={16} className="text-primary shrink-0 mt-0.5" /><span>{COMPANY.address}</span></li>
               <li className="flex gap-3"><Phone size={16} className="text-primary shrink-0 mt-0.5" /><a href={`tel:${COMPANY.phone}`} className="hover:text-primary">{COMPANY.phone}</a></li>
@@ -57,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ Hours ]</h3>
+            <h3 className="font-mono text-xs uppercase tracking-widest text-primary mb-5">[ {t.footer.hours} ]</h3>
             <ul className="space-y-3.5 text-sm text-foreground/70">
               <li className="flex gap-3"><Clock size={16} className="text-primary shrink-0 mt-0.5" /><span>{COMPANY.hours}</span></li>
               <li className="text-xs text-muted-foreground pt-2 border-t border-border">
@@ -70,8 +72,8 @@ export default function Footer() {
         <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground font-mono">© {new Date().getFullYear()} Carbotech. All rights reserved.</p>
           <div className="flex gap-6 text-xs text-muted-foreground font-mono">
-            <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-primary">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:text-primary">{t.footer.privacy}</Link>
+            <Link to="/terms" className="hover:text-primary">{t.footer.terms}</Link>
           </div>
         </div>
       </div>

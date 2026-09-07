@@ -17,6 +17,14 @@ browser's `localStorage`. Data is intentionally local to each browser.
 
 For the local admin area, use `admin@carbotech.local` with any non-empty password.
 
+## Language and currency
+
+The site detects the device/browser language at startup. Arabic (`ar-*`) devices
+receive Arabic navigation and RTL layout; other devices use English. The
+language button in the navigation can switch languages locally without an
+external translation service. All catalog and estimator prices are displayed in
+Saudi Riyals (SAR).
+
 ## Deploy on Render
 
 Create a **Web Service** connected to the GitHub repository and use:

@@ -45,6 +45,12 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
   }
+  html[dir="rtl"] body {
+    font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+  }
+  html[dir="rtl"] .font-mono {
+    letter-spacing: 0;
+  }
   ::selection {
     background: hsl(var(--primary));
     color: white;

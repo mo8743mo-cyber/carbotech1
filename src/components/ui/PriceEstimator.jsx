@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Calculator, Info } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import { formatSAR, useLanguage } from "@/lib/i18n";
 
 const MATERIALS = [
   { id: "twill", label: "2x2 Twill Carbon", base: 450, desc: "Classic weave, autoclave cured" },
@@ -17,6 +18,7 @@ const COMPLEXITY = [
 ];
 
 export default function PriceEstimator() {
+  const { language } = useLanguage();
   const [material, setMaterial] = useState("twill");
   const [complexity, setComplexity] = useState("moderate");
   const [quantity, setQuantity] = useState("1");
@@ -61,7 +63,7 @@ export default function PriceEstimator() {
                       material === m.id ? "border-primary bg-primary/5" : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <span className="font-mono text-xs text-primary">[ {m.base} SAR ]</span>
+                    <span className="font-mono text-xs text-primary">[ {formatSAR(m.base, language)} ]</span>
                     <h4 className="font-heading font-semibold text-sm mt-1">{m.label}</h4>
                     <p className="text-xs text-muted-foreground mt-1">{m.desc}</p>
                   </button>
@@ -108,16 +110,16 @@ export default function PriceEstimator() {
           <div className="border border-border bg-card p-6 lg:p-8 h-fit">
             <span className="font-mono text-xs uppercase text-muted-foreground">Estimated Range</span>
             <div className="mt-2 flex items-baseline gap-2">
-              <span className="font-heading font-bold text-4xl text-primary text-glow">{range[0].toLocaleString()}</span>
-              <span className="font-mono text-muted-foreground">— {range[1].toLocaleString()} SAR</span>
+              <span className="font-heading font-bold text-4xl text-primary text-glow">{formatSAR(range[0], language)}</span>
+              <span className="font-mono text-muted-foreground">— {formatSAR(range[1], language)}</span>
             </div>
             <div className="mt-6 space-y-2 border-t border-border pt-4 font-mono text-xs">
-              <Row label="Per unit" value={`${perUnit.toLocaleString()} SAR`} />
+              <Row label="Per unit" value={formatSAR(perUnit, language)} />
               <Row label="Material" value={mat.label} />
               <Row label="Complexity" value={`x${comp.mult}`} />
               <Row label="Quantity" value={qty} />
               <div className="border-t border-border pt-2 mt-2">
-                <Row label="Estimated total" value={`${total.toLocaleString()} SAR`} bold />
+                <Row label="Estimated total" value={formatSAR(total, language)} bold />
               </div>
             </div>
             <div className="mt-6 flex items-start gap-2 text-xs text-muted-foreground">
