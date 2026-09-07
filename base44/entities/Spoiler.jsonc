@@ -1,0 +1,86 @@
+{
+  "name": "Spoiler",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "price_on_request": {
+      "type": "boolean",
+      "default": false
+    },
+    "vehicle_make": {
+      "type": "string"
+    },
+    "vehicle_model": {
+      "type": "string"
+    },
+    "vehicle_year_from": {
+      "type": "number"
+    },
+    "vehicle_year_to": {
+      "type": "number"
+    },
+    "spoiler_type": {
+      "type": "string",
+      "enum": [
+        "rear-wing",
+        "lip-spoiler",
+        "ducktail",
+        "gt-wing",
+        "splitter",
+        "diffuser",
+        "side-skirt",
+        "other"
+      ]
+    },
+    "availability": {
+      "type": "string",
+      "enum": [
+        "in-stock",
+        "low-stock",
+        "made-to-order",
+        "out-of-stock"
+      ],
+      "default": "in-stock"
+    },
+    "stock_quantity": {
+      "type": "number"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "weight": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    },
+    "specs": {
+      "type": "object"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "published": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

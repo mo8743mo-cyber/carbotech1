@@ -1,0 +1,77 @@
+{
+  "name": "QuoteRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "customer_type": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "company"
+      ],
+      "default": "individual"
+    },
+    "project_category": {
+      "type": "string"
+    },
+    "vehicle_application": {
+      "type": "string"
+    },
+    "part_description": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "budget_range": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "consent": {
+      "type": "boolean",
+      "default": false
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewing",
+        "quoted",
+        "approved",
+        "in-production",
+        "completed",
+        "archived"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "consent"
+  ]
+}

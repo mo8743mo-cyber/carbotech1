@@ -1,0 +1,70 @@
+{
+  "name": "CustomInquiry",
+  "type": "object",
+  "properties": {
+    "customer_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "part_category": {
+      "type": "string"
+    },
+    "intended_application": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "target_deadline": {
+      "type": "string",
+      "format": "date"
+    },
+    "project_description": {
+      "type": "string"
+    },
+    "preferred_contact": {
+      "type": "string",
+      "enum": [
+        "email",
+        "phone",
+        "whatsapp"
+      ],
+      "default": "email"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewing",
+        "quoted",
+        "approved",
+        "in-production",
+        "completed",
+        "archived"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "customer_name",
+    "email"
+  ]
+}

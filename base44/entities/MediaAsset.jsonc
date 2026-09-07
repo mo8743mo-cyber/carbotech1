@@ -1,0 +1,34 @@
+{
+  "name": "MediaAsset",
+  "type": "object",
+  "properties": {
+    "filename": {
+      "type": "string"
+    },
+    "file_url": {
+      "type": "string"
+    },
+    "file_uri": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "alt_text": {
+      "type": "string"
+    },
+    "file_size": {
+      "type": "number"
+    },
+    "file_type": {
+      "type": "string"
+    },
+    "folder": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "filename",
+    "file_url"
+  ]
+}

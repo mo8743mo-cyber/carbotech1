@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <pattern id="weave" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="44" height="44" fill="#12161b"/>
+      <path d="M0 0h44M0 22h44" stroke="#28313a" stroke-width="10"/>
+      <path d="M0 11h44M0 33h44" stroke="#0b0d10" stroke-width="8"/>
+    </pattern>
+    <linearGradient id="shine" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#ef3d2f" stop-opacity=".3"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".45"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#weave)"/>
+  <path d="M-100 760 360 0h260L160 900H-100zm620 140L980 0h210L730 900z" fill="url(#shine)"/>
+  <path d="M0 760 1200 120" stroke="#ef3d2f" stroke-opacity=".3" stroke-width="3"/>
+</svg>
