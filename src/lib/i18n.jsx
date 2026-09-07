@@ -28,8 +28,8 @@ const translations = {
 };
 
 const arabicText = {
-  "Carbon Fiber Manufacturing": "تصنيع ألياف الكربون",
-  "Carbon Fiber Parts,": "أجزاء ألياف الكربون،",
+  "Carbon Fiber Manufacturing": "ورشة تصنيع ألياف الكربون",
+  "Carbon Fiber Parts,": " ألياف الكربون،",
   "Engineered": "هندسة",
   "Without Limits": "بلا حدود",
   "Carbotech designs and manufactures high-performance carbon-fiber parts for cars, motorcycles, drones, industrial applications, and anything you can imagine.": "تصمم كاربوتك وتصنع أجزاء عالية الأداء من ألياف الكربون للسيارات والدراجات والطائرات المسيرة والتطبيقات الصناعية وكل ما يمكنك تخيله.",
@@ -37,10 +37,10 @@ const arabicText = {
   "Explore Our Products": "استكشف منتجاتنا",
   "ISO-Grade QC": "فحص جودة بمستوى ISO",
   "CNC + Autoclave": "CNC + الأوتوكلاف",
-  "Vacuum Infusion": "التشريب بالتفريغ",
+  "Vacuum Infusion": "التصنيع بالتفريغ",
   "Applications": "التطبيقات",
   "If You Can Imagine It,": "إذا استطعت تخيله،",
-  "We Can Engineer It.": "يمكننا هندسته.",
+  "We Can Engineer It.": "يمكننا صناعته.",
   "Start a custom project": "ابدأ مشروعاً مخصصاً",
   "Tell Us What You Want to Build": "أخبرنا بما تريد بناءه",
   "Your Idea. Our Engineering.": "فكرتك. هندستنا.",
